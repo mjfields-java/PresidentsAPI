@@ -12,12 +12,18 @@ response = requests.get(url)
 json_data = response.json()
 
 # create a list
-RelatedTopics = []
-for name in json_data:
-    RelatedTopics.append(name['url'])
+List1 = []
+for data in json_data:
+    List1.append(data)
 
 # How many items are in the url list (Should be 5000 since we have 5000 photos in our dataset)?
-print(len(RelatedTopics))
+print(List1)
 
 # How many items are there if we turn that list into a set?
-print(len(set(RelatedTopics)))
+print(len(set(List1)))
+List2 = []
+for name in response.json():
+    List2.append(name)
+    #print(List2)
+print('RelatedTopics' in response.json())
+print(json_data)
