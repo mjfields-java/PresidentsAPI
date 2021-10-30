@@ -16,7 +16,7 @@ List1 = []
 for data in json_data:
     List1.append(data)
 
-# How many items are in the url list (Should be 5000 since we have 5000 photos in our dataset)?
+# How many items are in the url list (should be 21)
 print(List1)
 
 # How many items are there if we turn that list into a set?
@@ -24,6 +24,15 @@ print(len(set(List1)))
 List2 = []
 for name in response.json():
     List2.append(name)
-    #print(List2)
+    # print(List2)
 print('RelatedTopics' in response.json())
 print(json_data)
+List3 = []
+resp = requests.get(url)
+rsp_data = resp.json()
+relatedTopics = rsp_data['RelatedTopics']
+# print(*relatedTopics, sep = "\n")
+for i in relatedTopics:
+    print(i['Result'])
+    print('Lincoln' in resp.text)
+# print('Lincoln' in "https://duckduckgo.com/Abraham_Lincoln")
